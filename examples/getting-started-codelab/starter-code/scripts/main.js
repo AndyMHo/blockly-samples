@@ -8,7 +8,14 @@
   let currentButton;
 
   function handlePlay(event) {
-    // Add code for playing sound.
+    loadWorkspace(event.target);
+    let code = Blockly.JavaScript.workspaceToCode(Blockly.getMainWorkspace());
+    code += 'MusicMaker.play();';
+    try {
+      eval(code);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   function save(button) {

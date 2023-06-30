@@ -19,4 +19,9 @@ Blockly.common.defineBlocksWithJsonArray([
       "nextStatement": null,
       "colour": 355
     }
-  ]);
+]);
+
+Blockly.JavaScript['play_sound'] = function(block) {
+    let value = '\'' + block.getFieldValue('VALUE') + '\'';
+    return 'MusicMaker.queueSound(' + value + ');\n';
+};
