@@ -39,6 +39,7 @@
   function enableBlocklyMode(e) {
     document.body.setAttribute('mode', 'blockly');
     currentButton = e.target;
+    loadWorkspace(currentButton);
   }
 
   document.querySelector('#edit').addEventListener('click', enableEditMode);
@@ -88,10 +89,6 @@
       } else {
         workspace.clear();
       }
-    }
-
-    function enableBlocklyMode(e) {
-      loadWorkspace(currentButton);
     }
 
 })();
