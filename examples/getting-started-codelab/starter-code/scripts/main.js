@@ -79,6 +79,11 @@
     toolboxPosition: "end",
   });
   
+  function save(button) {
+    button.blocklySave = Blockly.serialization.workspaces.save(
+        Blockly.getMainWorkspace());
+  }
+
   function loadWorkspace(button) {
     const workspace = Blockly.getMainWorkspace();
     if (button.blocklySave) {
